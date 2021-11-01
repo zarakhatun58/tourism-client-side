@@ -9,7 +9,7 @@ const AddBooking = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('https://ghostly-goosebumps-39347.herokuapp.com/services', data)
+        axios.post('https://lit-island-75424.herokuapp.com/services', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
@@ -30,13 +30,13 @@ const AddBooking = () => {
                 <div className="row justify-content-center">
                     <div className="col-md-6">
                         <div className="single-add-Booking">
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <input className="form-control mb-3" {...register("name")} placeholder="Name" required />
-                            <input className="form-control mb-3" type="number" {...register("price")} placeholder="price" required/>
-                            <textarea className="form-control mb-3" {...register("description")} placeholder="Description" required/>
-                            <input className="form-control mb-3" {...register("img")} placeholder="image url" required/>
-                            <input className="btn btn-success" type="submit" />
-                        </form>
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <input className="form-control mb-3" {...register("name")} placeholder="Name" required />
+                                <input className="form-control mb-3" type="number" {...register("price")} placeholder="price" required />
+                                <textarea className="form-control mb-3" {...register("description")} placeholder="Description" required />
+                                <input className="form-control mb-3" {...register("img")} placeholder="image url" required />
+                                <input className="btn btn-success" type="submit" />
+                            </form>
                         </div>
                     </div>
                 </div>

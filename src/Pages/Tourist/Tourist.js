@@ -6,7 +6,7 @@ import './Tourist.css';
 const Tourist = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://lit-island-75424.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
@@ -24,16 +24,16 @@ const Tourist = () => {
                 </div>
                 {
                     services.length === 0 ?
-                    <Spinner animation="Booking" />
-                    :
-                    <div className="row">
-                    {
-                        services.map(service => <SingleTourist
-                        key={service._id}
-                        service={service}
-                        ></SingleTourist>)
-                    }
-                </div>
+                        <Spinner animation="Booking" />
+                        :
+                        <div className="row">
+                            {
+                                services.map(service => <SingleTourist
+                                    key={service._id}
+                                    service={service}
+                                ></SingleTourist>)
+                            }
+                        </div>
                 }
             </div>
         </div>

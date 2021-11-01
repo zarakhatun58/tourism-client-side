@@ -3,29 +3,29 @@ import { Table } from 'react-bootstrap';
 import useFirebase from '../../hooks/useFirebase';
 import './MyBookings.css';
 const MyBookings = () => {
-    const {user} = useFirebase();
+    const { user } = useFirebase();
     const [myBookings, setMyBookings] = useState([]);
-    useEffect(()=> {
-        fetch(`http://localhost:5000/myBookings/${user?.email}`)
-        .then(res => res.json())
-        .then(data => setMyBookings(data))
+    useEffect(() => {
+        fetch(`https://lit-island-75424.herokuapp.com/myBookings/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setMyBookings(data))
     }, [user.email])
 
     const handleCancel = id => {
         const proceed = window.confirm('Are you sure you want to delete');
-        if(proceed){
-            const url = `http://localhost:5000/myBookings/${id}`;
+        if (proceed) {
+            const url = `https://lit-island-75424.herokuapp.com/myBookings/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0){
-                    alert('Deleted Successfully');
-                    const remainingProducts = myBookings.filter(Booking => Booking._id !== id);
-                    setMyBookings(remainingProducts);
-                }
-            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Deleted Successfully');
+                        const remainingProducts = myBookings.filter(Booking => Booking._id !== id);
+                        setMyBookings(remainingProducts);
+                    }
+                })
         }
     }
     return (
@@ -41,7 +41,7 @@ const MyBookings = () => {
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="Booking-single">
-                        <Table striped Bookinged>
+                            <Table striped Bookinged>
                                 <thead>
                                     <tr>
                                         <th>Id</th>
@@ -53,7 +53,7 @@ const MyBookings = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                    myBookings.map(Booking => <tr key={Booking._id}>
+                                        myBookings.map(Booking => <tr key={Booking._id}>
                                             <td>{Booking._id}</td>
                                             <td>{Booking.name}</td>
                                             <td>{Booking.price}</td>
@@ -62,7 +62,7 @@ const MyBookings = () => {
                                                 <button onClick={() => handleCancel(Booking._id)} className="btn btn-danger ms-2">Cancel</button>
                                             </td>
                                         </tr>
-                                    )} 
+                                        )}
                                 </tbody>
                             </Table>
                         </div>

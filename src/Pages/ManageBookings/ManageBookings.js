@@ -4,28 +4,28 @@ import { Link } from 'react-router-dom';
 import './ManageBookings.css';
 
 const ManageBookings = () => {
-    
+
     const [Bookings, setBookings] = useState([]);
-    useEffect(()=> {
-        fetch('http://localhost:5000/Bookings/')
-        .then(res => res.json())
-        .then(data => setBookings(data))
+    useEffect(() => {
+        fetch('https://lit-island-75424.herokuapp.com/Bookings/')
+            .then(res => res.json())
+            .then(data => setBookings(data))
     }, [])
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete');
-        if(proceed){
-            const url = `http://localhost:5000/Bookings/${id}`;
+        if (proceed) {
+            const url = `https://lit-island-75424.herokuapp.com/Bookings/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0){
-                    alert('Deleted Successfully');
-                    const remainingProducts = Bookings.filter(Booking => Booking._id !== id);
-                    setBookings(remainingProducts);
-                }
-            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Deleted Successfully');
+                        const remainingProducts = Bookings.filter(Booking => Booking._id !== id);
+                        setBookings(remainingProducts);
+                    }
+                })
         }
     }
     return (
@@ -41,7 +41,7 @@ const ManageBookings = () => {
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="Booking-single">
-                        <Table striped Bookinged>
+                            <Table striped Bookinged>
                                 <thead>
                                     <tr>
                                         <th>Id</th>
@@ -53,7 +53,7 @@ const ManageBookings = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                    Bookings.map(Booking => <tr key={Booking._id}>
+                                        Bookings.map(Booking => <tr key={Booking._id}>
                                             <td>{Booking._id}</td>
                                             <td>{Booking.name}</td>
                                             <td>{Booking.price}</td>
@@ -64,7 +64,7 @@ const ManageBookings = () => {
                                                 <button onClick={() => handleDelete(Booking._id)} className="btn btn-danger ms-2">Delete</button>
                                             </td>
                                         </tr>
-                                    )} 
+                                        )}
                                 </tbody>
                             </Table>
                         </div>
