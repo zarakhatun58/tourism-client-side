@@ -1,0 +1,47 @@
+[
+
+    {
+        "img": "https://i.ibb.co/nmXzdD4/1.jpg",
+        "name": "Beijing , China",
+        "time":"5Day-4Night",
+        "price": "$9320",
+        "description": "One of the oldest places in the world is the city of Beijing, China."
+    },
+    {
+        "img": "https://i.ibb.co/87KFph9/2.jpg",
+        "name": "Tokyo , Japan",
+        "time":"3Day-2Night",
+        "price": "$6320",
+        "description": "Japan is one of the most modern civilized countries in the world where the modern thinking of becoming modern will build your mindset and selection"
+    },
+   
+    {
+        "img": "https://i.ibb.co/0rh1HgT/3-Copy.jpg",
+        "name": "Semporna , Malaysia",
+        "time":"6Day-5Night",
+        "price": "$7530",
+        "description": "One of the poorest people in the world to get a modern touch is Malaysia, which is now considered a modern state."
+    },
+    {
+        "img": "https://i.ibb.co/TLj72jq/4-Copy.jpg",
+        "name": "Victoria, Columbia",
+        "time":"7Day-6Night",
+        "price": "$8750",
+        "description": "Colombia is a well-known ancient country in our country where many people don't know some unknown facts about the world that will remind you of the history of the world 2000 years ago."
+    },
+    {
+        "img": "https://i.ibb.co/zh40k93/5-Copy.jpg",
+        "name": "Bangkok , Thailan",
+        "time":"7Day-6Night",
+        "price": "$98100",
+        "description": "Bangkok is one of the few places in the world where you can travel with your family and friends."
+    },
+    {
+        "img": "https://i.ibb.co/3mpMwPC/6.jpg",
+        "name": "Jakarta, Indonesia",
+        "time":"8Day-7Night",
+        "price": "$50900",
+        "description": "Indonesia is one of the most maritime countries in the world where you can enjoy an overall journey that you will not find in any other country in the world."
+    }
+
+]
