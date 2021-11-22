@@ -38,7 +38,7 @@ const LogIn = () => {
                                 {
                                     (!user?.displayName) ?
                                     <button onClick={handleGoogleLogin} className="btn btn-success mt-3 text-white">
-                                    Google Sign In
+                                    Google Sign In Here
                                     </button>
                                     :
                                     <button  onClick={logOut} className="btn btn-success mt-3 text-white">
